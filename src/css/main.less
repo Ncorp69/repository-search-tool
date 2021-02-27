@@ -10,6 +10,7 @@
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0.01em;
+  text-decoration: underline;
 }
 
 body {
@@ -44,12 +45,6 @@ body {
   }
 }
 
-.border-box {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
 .search-wrap {
   @searchWidth: 456px;
   position: relative;
@@ -71,7 +66,7 @@ body {
     border: solid 2px @grey;
     padding-left: 46px;
     padding-right: 49px;
-    .border-box();
+    box-sizing: border-box;
     .typography();
     &:focus{
       border-color: @accent;
@@ -79,15 +74,11 @@ body {
   }
   .spinner-icon {
     .icon();
-    @anim: spin 2s linear infinite;
-    @keyframeFrom: translate(-32px, -50%) rotate(0deg);
-    @keyframeTo: translate(-32px, -50%) rotate(360deg);
-    animation: @anim;
-    -moz-animation: @anim;
-    -webkit-animation: @anim;
-    @-moz-keyframes spin { 0% { -moz-transform: @keyframeFrom; } 100% { -moz-transform: @keyframeTo; } }
-    @-webkit-keyframes spin { 0% { -webkit-transform: @keyframeFrom; } 100% { -webkit-transform: @keyframeTo; } }
-    @keyframes spin { 0% { -webkit-transform: @keyframeFrom; transform: @keyframeFrom; } 100% { -webkit-transform: @keyframeTo; transform: @keyframeTo; } }
+    animation: spin 2s linear infinite;
+    @keyframes spin {
+      0% { transform: translate(-32px, -50%) rotate(0deg); }
+      100% { transform: translate(-32px, -50%) rotate(360deg); }
+    }
   }
   .cross-icon {
     .icon();
@@ -101,7 +92,7 @@ body {
     top: 72px;
     width: @searchWidth;
     border-radius: 4px;
-    .border-box();
+    box-sizing: border-box;
     .selected-search-result {
       @textColor: #FFFFFF;
       background-color: @accent;
