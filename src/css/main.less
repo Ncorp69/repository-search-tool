@@ -38,14 +38,23 @@ body {
     display: inline-block;
     min-width: 150px;
     font-weight: bold;
+    width: 100%;
   }
   .text {
     display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+.adaptive-width {
+  width: 456px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
   }
 }
 
 .search-wrap {
-  @searchWidth: 456px;
   position: relative;
   .icon {
     position: absolute;
@@ -60,13 +69,13 @@ body {
     background-color: @greyLight;
     color: @dark;
     height: 48px;
-    width: @searchWidth;
     border-radius: 100px;
     border: solid 2px @grey;
     padding-left: 46px;
     padding-right: 49px;
     box-sizing: border-box;
     .typography();
+    .adaptive-width();
     &:focus{
       border-color: @accent;
     }
@@ -89,9 +98,9 @@ body {
     background-color: @greyLight;
     position: absolute;
     top: 72px;
-    width: @searchWidth;
     border-radius: 4px;
     box-sizing: border-box;
+    .adaptive-width();
     .selected-search-result {
       @textColor: #FFFFFF;
       background-color: @accent;
