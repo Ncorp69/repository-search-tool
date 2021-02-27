@@ -1,6 +1,6 @@
 import SearchActionTypes from "../../actionTypes/components/SearchActionTypes";
 
-const getResults = ( nameList, value ) => nameList.filter( name => name.includes( value ));
+const getResults = ( nameList, value ) => nameList.filter( name => name.toLowerCase().includes( value.toLowerCase()));
 
 export const loadData = () => ( dispatch, getState ) => {
     fetch( 'https://api.github.com/orgs/kraftvaerk/repos' )
