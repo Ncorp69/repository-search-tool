@@ -17,3 +17,4 @@ After successful installation of node_modules, you can run project using next co
 ```shell
 npm start
 ```
+The interface will be available on http://127.0.0.1:8989/#/ .
