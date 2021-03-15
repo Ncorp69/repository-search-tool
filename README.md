@@ -2,8 +2,6 @@
 A simple tool for searching Kraftvaerk's repositories on GitHub by name.
 Selecting repository is available via arrow keys or mouse click.
 
-The tool is available on next [link](http://www.ncorp.site/#/).
-
 
 ### Installing project.
 To install the project you need an actual version of node.js and npm.
